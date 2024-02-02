@@ -111,7 +111,7 @@ public class GehituAlmazena extends JFrame {
 		JButton Gehitu = new JButton("Gehitu");
 		Gehitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try (Connection connection = dbConexioa()) {
+				try (Connection connection = Conexion.dbConexioa()) {
 		            if (connection != null) {
 		            	
 		            	 try {
@@ -154,8 +154,11 @@ public class GehituAlmazena extends JFrame {
 				
 			}
 
+			/**
+			 * @deprecated Use {@link Conexion#dbConexioa()} instead
+			 */
 			public static Connection dbConexioa() throws SQLException {
-				return DriverManager.getConnection(Conexion.DB_URL, Conexion.DB_USER, Conexion.DB_PASSWORD);
+				return Conexion.dbConexioa();
 			}
 
 		});
