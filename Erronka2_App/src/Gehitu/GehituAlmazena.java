@@ -111,7 +111,7 @@ public class GehituAlmazena extends JFrame {
 		JButton Gehitu = new JButton("Gehitu");
 		Gehitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try (Connection connection = DriverManager.getConnection(Conexion.DB_URL, Conexion.DB_USER, Conexion.DB_PASSWORD)) {
+				try (Connection connection = dbConexioa()) {
 		            if (connection != null) {
 		            	
 		            	 try {
@@ -152,6 +152,10 @@ public class GehituAlmazena extends JFrame {
 	            System.err.println("Errorea datu basearekin konexioa egiten: " + a.getMessage());
 	        }
 				
+			}
+
+			public static Connection dbConexioa() throws SQLException {
+				return DriverManager.getConnection(Conexion.DB_URL, Conexion.DB_USER, Conexion.DB_PASSWORD);
 			}
 
 		});
