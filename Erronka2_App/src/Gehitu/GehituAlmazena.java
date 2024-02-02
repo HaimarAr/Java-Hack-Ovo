@@ -108,8 +108,8 @@ public class GehituAlmazena extends JFrame {
 		textField_5.setBounds(466, 238, 54, 19);
 		contentPane.add(textField_5);
 		
-		JButton btnNewButton = new JButton("Gehitu");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton Gehitu = new JButton("Gehitu");
+		Gehitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try (Connection connection = DriverManager.getConnection(Conexion.DB_URL, Conexion.DB_USER, Conexion.DB_PASSWORD)) {
 		            if (connection != null) {
@@ -117,20 +117,27 @@ public class GehituAlmazena extends JFrame {
 		            	 try {
 		                     String sql = "INSERT INTO alamazena (ErregistroID, izena, kantitatea, modeloa, marka, prezioaE, prezioaS, berria, Irudia, balorazioa) VALUES (?, ?, ?, ?, ?, ?)";
 		            		 PreparedStatement preparedStatement = connection.prepareStatement(sql);
-		            		 
-		                     preparedStatement.setString(1, textField.getText());
+		            		 	                              
+		                     int id = Integer.parseInt(textField.getText());
+		                     preparedStatement.setInt(1, id);
 		                     
-		                     int id = Integer.parseInt(textField_1.getText());
-		            
-		                     preparedStatement.setInt(2, id);
+		                     preparedStatement.setString(2, textField_1.getText());	
 		                     
-		                    
-		                     preparedStatement.setString(3, textField_2.getText());		                     
+		                     int kantitatea = Integer.parseInt(textField_2.getText());
+		                     preparedStatement.setInt(3, kantitatea);
+		                     
 		                     preparedStatement.setString(4, textField_3.getText());
-		                     int Stock_kantitatea = Integer.parseInt(textField_4.getText());
-		                     preparedStatement.setInt(5, Stock_kantitatea);
-		                     int Produktuaren_KG = Integer.parseInt(textField_5.getText());
-		                     preparedStatement.setInt(6, Produktuaren_KG);
+		                     
+		                     preparedStatement.setString(5, textField_4.getText());
+		                     
+		                     
+		                     Double prezioaE = Double.valueOf(textField_5.getText());
+		                     preparedStatement.setDouble(6, prezioaE);
+		                     
+		                     Double prezioaS = Double.valueOf(textField_6.getText());
+		                     preparedStatement.setDouble(7, prezioaS);
+		                     
+		                     
 		                     
 		                     int affectedRows = preparedStatement.executeUpdate();
 		                     if (affectedRows > 0) {
@@ -148,9 +155,9 @@ public class GehituAlmazena extends JFrame {
 			}
 
 		});
-		btnNewButton.setForeground(new Color(255, 128, 0));
-		btnNewButton.setBounds(146, 289, 630, 21);
-		contentPane.add(btnNewButton);
+		Gehitu.setForeground(new Color(255, 128, 0));
+		Gehitu.setBounds(146, 289, 630, 21);
+		contentPane.add(Gehitu);
 		
 		JButton btnNewButton_1 = new JButton("Atzera\r\n");
 		btnNewButton_1.addActionListener(new ActionListener() {
