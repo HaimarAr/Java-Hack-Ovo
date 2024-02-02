@@ -28,6 +28,9 @@ import javax.swing.DefaultComboBoxModel;
 
 public class Menu extends JFrame {
 
+	private static final int Aldatu = 3;
+	private static final int Gehitu = 2;
+	private static final int Kendu = 1;
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public JComboBox comboBox = new JComboBox();
@@ -66,6 +69,7 @@ public class Menu extends JFrame {
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"almazena", "usuarios", "langileak"}));
 		comboBox.setBounds(572, 168, 181, 38);
 		contentPane.add(comboBox);
+		
 		String value= comboBox.getSelectedItem().toString();
 		
 		setContentPane(contentPane);
@@ -78,7 +82,7 @@ public class Menu extends JFrame {
 					 
 					setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 					dispose();
-					funtzioak.aukeratu(value, 1);
+					funtzioak.aukeratu(value, Kendu);
 					
 						
 			    		
@@ -97,7 +101,7 @@ public class Menu extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 						 setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 						dispose();
-						funtzioak.aukeratu(value, 2);
+						funtzioak.aukeratu(value, Gehitu);
 		        }
 				
 			});		
@@ -110,7 +114,7 @@ public class Menu extends JFrame {
 			public void actionPerformed(ActionEvent e) {					
 					setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 					dispose();
-					funtzioak.aukeratu(value, 3);
+					funtzioak.aukeratu(value, Aldatu);
 					
 						
 			    		

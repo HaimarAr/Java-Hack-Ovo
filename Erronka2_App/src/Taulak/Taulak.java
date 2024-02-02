@@ -88,7 +88,7 @@ public class Taulak extends JFrame {
 		btnNewButton.setBounds(156, 12, 120, 21);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try (Connection connection = DriverManager.getConnection(Conexion.DB_URL, Conexion.DB_USER, Conexion.DB_PASSWORD)) {
+				try (Connection connection = Conexion.dbConexioa()) {
 			            if (connection != null) {
 			            	
 			                String value= DatuBasea.getSelectedItem().toString();

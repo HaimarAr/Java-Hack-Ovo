@@ -260,9 +260,13 @@ public class Filtratu {
 		// TODO Auto-generated method stub
 	    Statement stat;
 		try {
-			 String valueColumn= textFieldColumn.getText();
-			 String valueBetween= textFieldBetween.getText();
+			
+			
+			
 			stat = connection.createStatement();
+			
+			String valueColumn = textFieldColumn.getText();
+			String valueBetween = textFieldBetween.getText();
 			ResultSet res=stat.executeQuery("select * from " + value + " where " + valueColumn +  " BETWEEN " + valueBetween +";");
 	 	    ResultSetMetaData rsmd = res.getMetaData();
 	 	    DefaultTableModel taula = new DefaultTableModel();
@@ -307,8 +311,8 @@ public class Filtratu {
 		// TODO Auto-generated method stub
 	    Statement stat;
 		try {
-			 String valueColumn= textFieldColumn.getText();
-			 String valueBetween= textFieldBetween.getText();
+			 String valueColumn = textFieldColumn.getText();
+			 String valueBetween = textFieldBetween.getText();
 			stat = connection.createStatement();
 			ResultSet res=stat.executeQuery("SELECT * FROM " + value + " WHERE " + valueBetween + " IN (" + valueColumn + ");");
 	 	    ResultSetMetaData rsmd = res.getMetaData();
@@ -357,7 +361,6 @@ public class Filtratu {
 		 Statement stat;
 			try {
 				 String valueColumn= textFieldColumn.getText();
-				 String valueBetween= textFieldBetween.getText();
 				stat = connection.createStatement();
 				ResultSet res=stat.executeQuery("SELECT distinct * FROM "+ value + " order by " + valueColumn + " asc;");
 		 	    ResultSetMetaData rsmd = res.getMetaData();
@@ -376,7 +379,6 @@ public class Filtratu {
 		Statement stat;
 		try {
 			 String valueColumn= textFieldColumn.getText();
-			 String valueBetween= textFieldBetween.getText();
 			stat = connection.createStatement();
 			ResultSet res=stat.executeQuery("SELECT distinct * FROM "+ value + " order by " + valueColumn + " desc;");
 	 	    ResultSetMetaData rsmd = res.getMetaData();
@@ -395,8 +397,6 @@ public class Filtratu {
 			// TODO Auto-generated method stub
 			Statement stat;
 			try {
-				 String valueColumn= textFieldColumn.getText();
-				 String valueBetween= textFieldBetween.getText();
 				stat = connection.createStatement();
 				ResultSet res=stat.executeQuery("SELECT count(*) FROM " + value + ";");
 		 	    ResultSetMetaData rsmd = res.getMetaData();

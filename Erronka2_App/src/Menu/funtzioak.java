@@ -60,23 +60,7 @@ public class funtzioak {
 	     	break;
 	     		
      	    }
-    	    /*if(value.equals("almazena")) {
-    	    	
-    	    }
-    	    else if(value.equals("bezeroak")) {
-    	    	
-    	    }
-    	    else if(value.equals("eskariak")) {
-    	    }
-    	    else if(value.equals("faktura")) {	
-    	    	
-    	    }
-    	    else if(value.equals("hornitzaileformulario")) {
-    	    	
-    	    }
-    	    else if(value.equals("langileak")) {
-    	    	
-    	    }*/
+    	   
     	}
     	catch(Exception ex)
     	{       
