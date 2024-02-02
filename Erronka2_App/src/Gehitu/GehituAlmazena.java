@@ -154,13 +154,6 @@ public class GehituAlmazena extends JFrame {
 				
 			}
 
-			/**
-			 * @deprecated Use {@link Conexion#dbConexioa()} instead
-			 */
-			public static Connection dbConexioa() throws SQLException {
-				return Conexion.dbConexioa();
-			}
-
 		});
 		Gehitu.setForeground(new Color(255, 128, 0));
 		Gehitu.setBounds(146, 289, 630, 21);
