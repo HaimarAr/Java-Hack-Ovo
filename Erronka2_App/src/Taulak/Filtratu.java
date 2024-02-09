@@ -49,6 +49,14 @@ public class Filtratu {
     	    	//Eginda
     	    	langileakikusi(taula,table,res);
     	    }
+    	    else if(value.equals("eskariak")) {
+    	    	//Eginda
+    	    	langileakikusi(taula,table,res);
+    	    }
+    	    else if(value.equals("faktura")) {
+    	    	//Eginda
+    	    	fakturaikusi(taula,table,res);
+    	    }
     	}
     	catch(Exception ex)
     	{       
@@ -191,19 +199,20 @@ public class Filtratu {
 	    taula.addColumn("abizena");
 	    taula.addColumn("email");
 	    taula.addColumn("telefonoa");
+	    taula.addColumn("helbidea");
 	    taula.addColumn("PK");
 	    taula.addColumn("postua");
 	    taula.addColumn("jaiotzeData");
 	    taula.addColumn("KK");
 	    
-	    String[] array = new String[9];
+	    String[] array = new String[10];
 	  
 	    table.setModel(taula);
 	    try {
 			while(res.next())
 			{
 				int i=0;
-				while(i < 9) {	
+				while(i < 10) {	
 			    array[i] = res.getString(i + 1);
 			    i++;
 				}
@@ -220,6 +229,7 @@ public class Filtratu {
 		// TODO Auto-generated method stub
 		
 		taula.addColumn("ErregistroID");
+		 taula.addColumn("prd_mota_id");
 	    taula.addColumn("izena");
 	    taula.addColumn("kantitatea");
 	    taula.addColumn("modeloa");
@@ -234,14 +244,14 @@ public class Filtratu {
 
 	    
 	    
-	    String[] array = new String[10];
+	    String[] array = new String[11];
 	    
 	    table.setModel(taula);
 	    try {
 			while(res.next())
 			{
 				int i=0;
-				while(i < 10) {	
+				while(i < 11) {	
 			    array[i] = res.getString(i + 1);
 			    i++;
 				}
@@ -260,14 +270,13 @@ public class Filtratu {
 		// TODO Auto-generated method stub
 	    Statement stat;
 		try {
-			
-			
-			
+	
 			stat = connection.createStatement();
 			
-			String valueColumn = textFieldColumn.getText();
+			
 			String valueBetween = textFieldBetween.getText();
-			ResultSet res=stat.executeQuery("select * from " + value + " where " + valueColumn +  " BETWEEN " + valueBetween +";");
+			ResultSet res=stat.executeQuery("select * from " + value + " where " + textFieldColumn.getText() +  " BETWEEN " + valueBetween +";");
+			
 	 	    ResultSetMetaData rsmd = res.getMetaData();
 	 	    DefaultTableModel taula = new DefaultTableModel();
 			between(taula, table, res, value);

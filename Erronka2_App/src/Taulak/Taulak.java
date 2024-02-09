@@ -2,7 +2,7 @@ package Taulak;
 
 import java.awt.EventQueue;
 import Conexion.Conexion;
-import Menu.Menu;
+import Menu.funtzioak;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -58,7 +58,7 @@ public class Taulak extends JFrame {
 	 */
 	public Taulak(int permiso) {
 	
-		setTitle("Reborn");
+		setTitle("Hack-Ovo");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1013, 563);
@@ -116,11 +116,11 @@ public class Taulak extends JFrame {
 		edit.setBounds(231, 453, 200, 62);
 		edit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(permiso == 1) {
-					
+				String value= DatuBasea.getSelectedItem().toString();
+				if(permiso == 1) {			
 					setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 					dispose();
-					Menu.main();
+					funtzioak.aukeratu(value);
 
 				}else {
 					JOptionPane.showMessageDialog(null, "Ez daukazu baimenik datuak editatzeko");

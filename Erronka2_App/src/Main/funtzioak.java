@@ -16,8 +16,11 @@ import Main.sarrera;
 public class funtzioak {
 	
 	public static int sartu( String pasahitza, String izena) {
+		
+		
 		try (Connection connection = DriverManager.getConnection(Conexion.DB_URL, Conexion.DB_USER, Conexion.DB_PASSWORD)) {
-            if (connection != null) {
+			
+			if (connection != null) {
                
 				
 				Statement stat=connection.createStatement();   

@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import Conexion.Conexion;
+import Taulak.Taulak;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -222,6 +223,14 @@ public class GehituAlmazena extends JFrame {
 	        System.err.println("Errorea datu basearekin konexioa egiten: " + a.getMessage());
 	    }
 				
-
+		JButton btnNewButton_6 = new JButton("Hasiera");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Taulak.main(1);
+			}
+		});
+		btnNewButton_6.setBounds(201, 10, 85, 21);
+		contentPane.add(btnNewButton_6);
 	}
+	
 }

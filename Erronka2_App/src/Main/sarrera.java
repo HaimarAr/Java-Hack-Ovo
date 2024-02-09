@@ -38,6 +38,9 @@ public class sarrera extends JFrame {
 	private static final long serialVersionUID = 1L;
 	public JPanel contentPane;
 	public JPasswordField txtPasa;
+	public String usuario;
+	public String pasahitza;
+	public String permiso;
 	public Langilea data = new Langilea(new String(), new String(), "1");
 	/**
 	 * Launch the application.
